@@ -1,0 +1,143 @@
+.products {
+  padding: 8rem 5%;
+  background: linear-gradient(to bottom, var(--pure-white), var(--light-gray));
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(8, 145, 178, 0.2);
+  border-color: var(--primary-blue);
+}
+
+.product-header {
+  background: linear-gradient(135deg, var(--primary-blue), var(--deep-blue));
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: ripple 4s ease-out infinite;
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-name {
+  font-family: 'Crimson Pro', serif;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.product-size {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 1;
+}
+
+.product-body {
+  padding: 2.5rem;
+}
+
+.product-price {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--fresh-green);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.product-description {
+  color: var(--medium-gray);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.product-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.product-features li {
+  padding: 0.8rem 0;
+  color: var(--dark-text);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.product-features li:last-child {
+  border-bottom: none;
+}
+
+.product-features svg {
+  color: var(--fresh-green);
+  flex-shrink: 0;
+}
+
+.product-body .btn {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
